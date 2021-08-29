@@ -10,12 +10,10 @@ import com.greatLearning.OOPsLabSolution.service.CredentialServiceImpl;
  */
 public class Main {
 
-
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-boolean flag=false;
-Scanner user_input = new Scanner(System.in);
+		boolean flag = false;
+		Scanner user_input = new Scanner(System.in);
 
 		/*
 		 * To get User Input for Employee's name
@@ -34,57 +32,57 @@ Scanner user_input = new Scanner(System.in);
 		 */
 
 		Employee employee = new Employee(firstName, lastName);
-		flag=true;
-
-		while(flag) {
-		System.out.println(
-				"Please Enter the Department from the following\n1. Technical\n2. Admin\n3. Human Resource\n4. Legal");
-		
-		int option = user_input.nextInt();
+		flag = true;
 
 		/*
-		 * Showing Credentials according to selected option by user
+		 * To continue the selection if user has selected wrong/invalid option
 		 */
+		while (flag) {
+			System.out.println(
+					"Please enter the Department from the following\n1. Technical\n2. Admin\n3. Human Resource\n4. Legal");
 
-		switch (option) {
+			int option = user_input.nextInt();
 
-		case 1:
+			/*
+			 * Showing Credentials according to selected option by user
+			 */
 
-			GenerateCred(employee.getFirstName(), employee.getLastName(), "tech");
-			flag=false;
+			switch (option) {
 
-			user_input.close();
-			break;
+			case 1:
 
-		case 2:
-			GenerateCred(employee.getFirstName(), employee.getLastName(), "admin");
-			flag=false;
+				GenerateCred(employee.getFirstName(), employee.getLastName(), "tech");
+				flag = false;
+				user_input.close();
+				break;
 
-			user_input.close();
-			break;
+			case 2:
+				GenerateCred(employee.getFirstName(), employee.getLastName(), "admin");
+				flag = false;
+				user_input.close();
+				break;
 
-		case 3:
-			GenerateCred(employee.getFirstName(), employee.getLastName(), "hr");
-			flag=false;
+			case 3:
+				GenerateCred(employee.getFirstName(), employee.getLastName(), "hr");
+				flag = false;
+				user_input.close();
+				break;
 
-			user_input.close();
-			break;
+			case 4:
 
-		case 4:
+				GenerateCred(employee.getFirstName(), employee.getLastName(), "legal");
+				flag = false;
+				user_input.close();
 
-			GenerateCred(employee.getFirstName(), employee.getLastName(), "legal");
-			flag=false;
-			user_input.close();
-			
-			break;
+				break;
 
-		default:
+			default:
 
-			System.out.println("Please select valid option");
-			flag=true;
+				System.out.println("Invalid Opton!!!Please select valid option");
+				flag = true;
 
-			break;
-		}
+				break;
+			}
 		}
 	}
 
@@ -97,8 +95,7 @@ Scanner user_input = new Scanner(System.in);
 		String password = credentialServiceImpl.generatePassword();
 		String email = credentialServiceImpl.generateEmailAddress(firstName, lastName, department);
 
-		if (password != null) {
-			credentialServiceImpl.showCredentials(firstName, lastName, password, email);
-		}
+		credentialServiceImpl.showCredentials(firstName, lastName, password, email);
+
 	}
 }
