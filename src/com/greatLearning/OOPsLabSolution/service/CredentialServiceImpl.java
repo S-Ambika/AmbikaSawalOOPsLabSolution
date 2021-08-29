@@ -47,11 +47,13 @@ public class CredentialServiceImpl implements ICredentialService {
 	}
 
 	@Override
-	public void showCredentials(String firstName, String lastName, String password, String email) {
+	public String showCredentials(String firstName, String lastName, String password, String email) {
 		// TODO Auto-generated method stub
 
-		System.out.println("Dear " + firstName + " your generated credentials are as follows:\n Email --> " + email
-				+ "\n Password --> " + password);
+		String show = "Dear " + firstName + " your generated credentials are as follows:\n Email --> " + email
+				+ "\n Password --> " + password;
+
+		return show;
 
 	}
 

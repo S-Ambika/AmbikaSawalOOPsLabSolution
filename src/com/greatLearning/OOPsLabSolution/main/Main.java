@@ -95,7 +95,7 @@ public class Main {
 		String password = credentialServiceImpl.generatePassword();
 		String email = credentialServiceImpl.generateEmailAddress(firstName, lastName, department);
 
-		credentialServiceImpl.showCredentials(firstName, lastName, password, email);
+		System.out.println(credentialServiceImpl.showCredentials(firstName, lastName, password, email));
 
 	}
 }

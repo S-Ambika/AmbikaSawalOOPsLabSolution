@@ -10,5 +10,5 @@ public interface ICredentialService {
 
 	String generateEmailAddress(String firstName, String lastName, String department);
 
-	void showCredentials(String firstName, String lastName, String password, String email);
+	String showCredentials(String firstName, String lastName, String password, String email);
 }
