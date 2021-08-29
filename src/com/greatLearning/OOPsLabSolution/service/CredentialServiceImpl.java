@@ -40,7 +40,7 @@ public class CredentialServiceImpl implements ICredentialService {
 
 		// TODO Auto-generated method stub
 
-		String email_id = firstName.toLowerCase() + lastName.toLowerCase() + "@" + department + "."
+		String email_id = firstName.toLowerCase() + lastName.toLowerCase() + "." + department + "@"
 				+ Constants.companyName + ".com";
 
 		return email_id;
